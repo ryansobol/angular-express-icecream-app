@@ -1,0 +1,41 @@
+<h1>Hi from the icecream index view!</h1>
+<button ng-click="addIce = !addIce" type="button" name="button">Add Ice Cream</button>
+<form ng-show="addIce">
+  <label>Name:
+    <input type="text" name="name" ng-model="icecream.name">
+  </label>
+  <label>Description:
+    <input type="text" name="description" ng-model="icecream.description">
+  </label>
+  <label>ImageUrl:
+    <input type="text" name="imageUrl" ng-model="icecream.imageUrl">
+  </label>
+  <input type="submit" name="submit" value="Submit" ng-click="addIcecream(icecream)">
+</form>
+
+<table ng-repeat="icecream in icecreams track by $index">
+  <thead>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Description
+      </td>
+      <td>
+        Image
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <td>
+      {{icecream.name}}
+    </td>
+    <td>
+      {{icecream.description}}
+    </td>
+    <td>
+      <img ng-src="{{icecream.imageUrl}}" alt="" />
+    </td>
+  </tbody>
+</table>
